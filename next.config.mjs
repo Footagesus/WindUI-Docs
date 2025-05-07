@@ -6,10 +6,13 @@ const repo = 'WindUI-Docs';
 
 /** @type {import('next').NextConfig} */
 const config = {
-  output: 'export',
-  basePath: isGithubPages ? `/${repo}` : '',
-  assetPrefix: isGithubPages ? `/${repo}/` : '',
-  reactStrictMode: true,
+    output: 'export',
+    basePath: isGithubPages ? `/${repo}` : '',
+    assetPrefix: isGithubPages ? `/${repo}/` : '',
+    reactStrictMode: true,
+    images: {
+        unoptimized: true,
+    },
 };
 
 export default withMDX(config);

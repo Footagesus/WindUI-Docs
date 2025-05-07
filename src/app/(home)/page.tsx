@@ -46,7 +46,7 @@ export default function HomePage() {
                 <div className="w-full px-6 relative bottom-0 w-full max-w-3xl translate-y-1/4">
                     <div className=" p-5 dark:bg-white/3 bg-black/10 rounded-[20px]">
                         <img
-                            className="w-full object-cover opacity-90 drop-shadow-2xl"
+                            className="w-full object-cover opacity-90 drop-shadow-2xl drop-shadow-black/50"
                             src="https://raw.githubusercontent.com/Footagesus/WindUI/main/docs/ui.png"
                             alt="WindUI Components Preview"
                         />
