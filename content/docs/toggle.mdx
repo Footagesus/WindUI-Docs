@@ -1,0 +1,68 @@
+---
+title: Toggle
+description: Creating Toggle and Editing it
+icon: ToggleRight
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Toggle 
+
+```luau
+local Toggle = Tab:Toggle({
+    Title = "Toggle",
+    Desc = "Toggle Description",
+    Icon = "bird",
+    Type = "Checkbox",
+    Default = false,
+    Callback = function(state) 
+        print("Toggle Activated" .. tostring(state))
+    end
+})
+```
+
+- ## Set Title
+    ```luau
+    Toggle:SetTitle("Title Example")
+    ```
+
+- ## Set Description
+    ```luau
+    Toggle:SetDesc("Description Example")
+    ```
+    
+- ## Set Toggle value
+    ```luau
+    Toggle:Set(true)
+    ```
+
+- ## Lock Element
+    ```luau
+    Toggle:Lock()
+    ```
+
+- ## Unlock Element
+    ```luau
+    Toggle:Unlock()
+    ```
+
+- ## Destroy Element
+    ```luau
+    Toggle:Destroy()
+    ```
+
+# API
+
+## Toggle Options
+
+<TypeTable
+  type={{
+    Title:         { type: 'string',   required: true,  description: 'Title of the Toggle.',                             default: "Toggle" },
+    Desc:          { type: 'string',   required: false, description: 'Description of the Toggle.',                       default: "nil" },
+    Value:         { type: 'boolean',  required: false, description: 'Default value of the Toggle',                      default: "false" },
+    Type:          { type: 'string',   required: false, description: "Type of the Toggle (`Checkbox` or `Toggle`)",      default: "Toggle" },
+    Icon:          { type: 'string',   required: false, description: "Lucide, rbxassetid, or URL icon for the Toggle",   default: "nil" },
+    Locked:        { type: 'boolean',  required: false, description: 'Locks the Element',                                default: "false" },
+    Callback:      { type: 'function', required: false, description: 'Callback of the Toggle',                           default: "nil" },
+  }}
+/>

@@ -1,0 +1,62 @@
+---
+title: Colorpicker
+description: Creating Colorpicker and Editing it
+icon: Palette
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Colorpicker 
+
+```luau
+local Colorpicker = Tab:Colorpicker({
+    Title = "Colorpicker",
+    Desc = "Colorpicker Description",
+    Default = Color3.fromRGB(0, 255, 0),
+    Transparency = 0,
+    Locked = false,
+    Callback = function(color) 
+        print("Background color: " .. tostring(color))
+    end
+})
+```
+
+- ## Set Title
+    ```luau
+    Colorpicker:SetTitle("Title Example")
+    ```
+
+- ## Set Description
+    ```luau
+    Colorpicker:SetDesc("Description Example")
+    ```
+
+- ## Lock Element
+    ```luau
+    Colorpicker:Lock()
+    ```
+
+- ## Unlock Element
+    ```luau
+    Colorpicker:Unlock()
+    ```
+
+- ## Destroy Element
+    ```luau
+    Colorpicker:Destroy()
+    ```
+
+# API
+
+## Colorpicker Options
+
+<TypeTable
+  type={{
+    Title:         { type: 'string',   required: true,  description: 'Title of the Colorpicker.',                                                                          default: "Colorpicker" },
+    Desc:          { type: 'string',   required: false, description: 'Description of the Colorpicker.',                                                                    default: "nil" },
+    Default:       { type: 'Color3',   required: true,  description: 'Default color of the Colorpicker',                                                                   default: "nil" },
+    Transparency:  { type: 'number',   required: true,  description: "Transparency of the Colorpicker `(0-1)` Remove this if you don't want to adjust the transparency.",  default: "nil" },
+    Locked:        { type: 'boolean',  required: false, description: 'Locks the Element',                                                                                  default: "false" },
+    Callback:      { type: 'function', required: false, description: 'Callback of the Colorpicker',                                                                        default: "nil" },
+  }}
+/>

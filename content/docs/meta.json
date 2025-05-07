@@ -1,0 +1,30 @@
+{
+  "title": "Documentation",
+  "description": "WindUI Documentation",
+  "icon": "Key",
+  "root": true,
+  "pages": [
+    "---Introduction---",
+    "index",
+    "---Setup---",
+    "load-windui",
+    "---UI---",
+    "window",
+    "tab",
+    "dialog",
+    "popup",
+    "---Elements---",
+    "button",
+    "code",
+    "colorpicker",
+    "dropdown",
+    "input",
+    "keybind",
+    "paragraph",
+    "section",
+    "slider",
+    "toggle",
+    "---Other---",
+    "installation"
+  ]
+}

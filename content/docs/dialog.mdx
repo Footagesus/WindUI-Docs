@@ -1,0 +1,64 @@
+---
+title: Dialog
+description: Dialog component for WindUI
+icon: MessageSquareText
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Dialog
+
+```luau
+local Dialog = Window:Dialog({
+    Icon = "bird",
+    Title = "Dialog Title",
+    Content = "Content Text",
+    Buttons = {
+        {
+            Title = "Confirm",
+            Callback = function()
+                print("Confirmed!")
+            end,
+        },
+        {
+            Title = "Cancel",
+            Callback = function()
+                print("Cancelled!")
+            end,
+        },
+    },
+})
+```
+
+- ## Show Dialog
+    ```luau
+    Dialog:Show()
+    ```
+
+- ## Close Dialog
+    ```luau
+    Dialog:Close()
+    ```
+
+# API
+
+## Dialog Options
+
+<TypeTable
+  type={{
+    Title:       { type: 'string',  required: true,  description: 'Title text of the dialog.',                        default: "Dialog" },
+    Content:     { type: 'string',  required: true,  description: 'Main description inside the dialog.',              default: "nil" },
+    Buttons:     { type: 'table',   required: true,  description: 'List of buttons with their titles and callbacks.', default: "{}" },
+  }}
+/>
+
+## Button Options (inside dialog)
+
+<TypeTable
+  type={{
+    Title:    { type: 'string',   required: true,  description: 'Button title text.',                        default: "Button" },
+    Icon:     { type: 'string',   required: false, description: 'Lucide icon for the Button.',               default: "nil" },
+    Variant:  { type: 'string',   required: false, description: 'Variants: (Primary, Secondary, Tertiary)',  default: "Primary" },
+    Callback: { type: 'function', required: false, description: 'Function executed when button is clicked.', default: "nil" },
+  }}
+/>

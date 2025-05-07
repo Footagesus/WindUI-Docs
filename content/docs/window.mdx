@@ -1,0 +1,106 @@
+---
+title: Window
+description: Creating Window and Editing it
+icon: AppWindow
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Window
+
+```luau
+local Window = WindUI:CreateWindow({
+    Title = "UI Title",
+    Icon = "door-open",
+    Author = "Example UI",
+    Folder = "CloudHub",
+    Size = UDim2.fromOffset(580, 460),
+    Transparent = true,
+    Theme = "Dark",
+    SideBarWidth = 200,
+    Background = "",
+    User = {
+        Enabled = true,
+        Anonymous = true,
+        Callback = function()
+            print("clicked")
+        end,
+    },
+    KeySystem = {
+        Key = { "1234", "5678" },
+        Note = "Example Key System.",
+        Thumbnail = {
+            Image = "rbxassetid://",
+            Title = "Thumbnail",
+        },
+        URL = "https://github.com/Footagesus/WindUI",
+        SaveKey = true,
+    },
+})
+```
+
+- ## Set Background Image
+    ```luau
+    Window:SetBackgroundImage("rbxassetid://id-here")
+    ```
+    
+- ## Set Toggle Key
+    ```luau
+    Window:SetToggleKey(Enum.KeyCode.H)
+    ```
+    
+- ## Set Transparency
+    ```luau
+    Window:ToggleTransparency(true)
+    ```
+
+# API
+
+## Window Options
+
+<TypeTable
+  type={{
+    Title:       { type: 'string',  required: true,  description: 'Title of the window.',                                 default: "UI Library" },
+    Icon:        { type: 'string',  required: false, description: 'Lucide, rbxassetid, or URL icon for the window.',      default: "nil" },
+    Author:      { type: 'string',  required: false, description: 'Name of the UI author.',                               default: "nil" },
+    Folder:      { type: 'string',  required: true,  description: 'Folder name for saving data (like keys, URL images).', default: "nil" },
+    Size:        { type: 'UDim2',   required: false, description: 'Custom size for the window.',                          default: "UDim2.new(0,580,0,460)" },
+    Transparent: { type: 'boolean', required: false, description: 'Whether the window background is transparent.',        default: "false" },
+    Theme:       { type: 'string',  required: false, description: 'Theme style (e.g., Dark, Light).',                     default: "Dark" },
+    SideBarWidth:{ type: 'number',  required: false, description: 'Width of the sidebar.',                                default: 200 },
+    Background:  { type: 'string',  required: false, description: 'Background image ID.',                                 default: "nil" },
+    User:        { type: 'table',   required: false, description: 'Settings related to the user system.',                 default: "{}" },
+    KeySystem:   { type: 'table',   required: false, description: 'Settings for key authentication system.',              default: "{}" },
+  }}
+/>
+
+## User Options
+
+<TypeTable
+  type={{
+    Enabled:   { type: 'boolean', required: true,  description: 'Enable the user system.',                default: "false" },
+    Anonymous: { type: 'boolean', required: false, description: 'Hide your nickname and avatar.',         default: "false" },
+    Callback:  { type: 'function',required: false, description: 'Function executed on user interaction.', default: "nil" },
+  }}
+/>
+
+## KeySystem Options
+
+<TypeTable
+  type={{
+    Key:       { type: 'table',   required: true,  description: 'List of valid keys.',              default: "{}" },
+    Note:      { type: 'string',  required: false, description: 'Additional note or instructions.', default: "nil" },
+    Thumbnail: { type: 'table',   required: false, description: 'Thumbnail image and title.',       default: "{}" },
+    URL:       { type: 'string',  required: false, description: 'URL to link for key system.',      default: "nil" },
+    SaveKey:   { type: 'boolean', required: false, description: 'Save the entered key locally.',    default: "false" },
+  }}
+/>
+
+## Thumbnail Options (inside KeySystem)
+
+<TypeTable
+  type={{
+    Image: { type: 'string', required: true,  description: 'Thumbnail image ID.',         default: "nil" },
+    Title: { type: 'string', required: false, description: 'Title shown with thumbnail.', default: "nil" },
+  }}
+/>

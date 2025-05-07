@@ -1,0 +1,34 @@
+---
+title: Tab
+description: Creating Tab
+icon: TableOfContents
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Tab
+
+```luau
+local Tab = Window:Tab({
+    Title = "Tab Title",
+    Icon = "bird",
+    Locked = false,
+})
+```
+
+- ## Select Tab
+    ```luau
+    Window:SelectTab(2) -- Number of Tab
+    ```
+
+# API
+
+## Tab Options
+
+<TypeTable
+  type={{
+    Title:   { type: 'string',  required: true,  default: "Tab",       description: 'Title of the Tab.' },
+    Icon:    { type: 'string',  required: false, default: "nil",       description: 'Lucide or rbxassetid icon for the Tab.' },
+    Locked:  { type: 'boolean', required: false, default: "false",     description: 'Locking the Tab.' },
+  }}
+/>

@@ -1,0 +1,82 @@
+---
+title: Paragraph
+description: Creating Paragraph and Editing it
+icon: Type
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Paragraph 
+
+```luau
+local Paragraph = Tab:Paragraph({
+    Title = "Paragraph with Image, Thumbnail, Buttons",
+    Desc = "Test Paragraph",
+    Color = "Red",
+    Image = "",
+    ImageSize = 30,
+    Thumbnail = "",
+    ThumbnailSize = 80,
+    Locked = false,
+    Buttons = {
+        {
+            Icon = "bird",
+            Title = "Button",
+            Callback = function() print("1 Button") end,
+        }
+    }
+})
+```
+
+- ## Set Title
+    ```luau
+    Paragraph:SetTitle("Title Example")
+    ```
+
+- ## Set Description
+    ```luau
+    Paragraph:SetDesc("DescriptionExample")
+    ```
+    
+- ## Destroy Element
+    ```luau
+    Paragraph:Destroy()
+    ```
+
+# API
+
+## Paragraph Options
+
+<TypeTable
+  type={{
+    Title:         { type: 'string',  required: true,  description: 'Title of the paragraph.',                              default: "Paragraph" },
+    Desc:          { type: 'string',  required: false, description: 'Description of the paragraph.',                        default: "nil" },
+    Image:         { type: 'string',  required: false, description: 'Lucide, rbxassetid, or URL icon for the paragraph.',   default: "nil" },
+    ImageSize:     { type: 'number',  required: false, description: 'Image Size.',                                          default: "22" },
+    Thumbnail:     { type: 'string',  required: false, description: 'Thumbnail of the paragraph.',                          default: "nil" },
+    ThumbnailSize: { type: 'number',  required: false, description: 'Thumbnail height size.',                               default: "80" },
+    Locked:        { type: 'boolean', required: false, description: 'Locks the Element',                                    default: "false" },
+    Buttons:       { type: 'table',   required: false, description: 'List of buttons with their titles and callbacks.',     default: "{}" },
+  }}
+/>
+
+## Button Options (inside paragraph)
+
+<TypeTable
+  type={{
+    Title:    { type: 'string',  required: true,  description: 'Button title text.',                        default: "Button" },
+    Icon:     { type: 'string',  required: false, description: 'Lucide icon for the Button.',               default: "nil" },
+    Callback: { type: 'function',required: false, description: 'Function executed when button is clicked.', default: "nil" },
+  }}
+/>
+
+## Paragraph colors
+
+| Preview                                                | Name   | Hex       |
+| ------------------------------------------------------ | ------ | --------- |
+| <div className="w-6 h-6 rounded-md bg-[#e53935]" />    | Red    | `#e53935` |
+| <div className="w-6 h-6 rounded-md bg-[#f57c00]" />    | Orange | `#f57c00` |
+| <div className="w-6 h-6 rounded-md bg-[#43a047]" />    | Green  | `#43a047` |
+| <div className="w-6 h-6 rounded-md bg-[#039be5]" />    | Blue   | `#039be5` |
+| <div className="w-6 h-6 rounded-md bg-white border" /> | White  | `#ffffff` |
+| <div className="w-6 h-6 rounded-md bg-[#484848]" />    | Grey   | `#484848` |

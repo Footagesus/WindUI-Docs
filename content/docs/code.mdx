@@ -1,0 +1,32 @@
+---
+title: Code
+description: Creating Code and Editing it
+icon: Terminal
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Code 
+
+```lua
+local Code = Tab:Code({
+    Title = "Code",
+    Code = [[print("Hello World!")]]
+})
+```
+
+- ## Set Code
+    ```lua
+    Code:SetCode([[print("New code!")]])
+    ```
+
+# API
+
+## Code Options
+
+<TypeTable
+  type={{
+    Title:  { type: 'string',   required: true,  description: 'Title of the Code.',  default: "Code" },
+    Code:   { type: 'string',   required: true,  description: 'Code.',               default: "nil" },
+  }}
+/>

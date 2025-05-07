@@ -1,0 +1,79 @@
+---
+title: Slider
+description: Creating Slider and Editing it
+icon: SlidersHorizontal
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Slider 
+
+```luau
+local Slider = Tab:Slider({
+    Title = "Slider",
+    Step = 1,
+    Value = {
+        Min = 20,
+        Max = 120,
+        Default = 70,
+    },
+    Callback = function(value)
+        print(value)
+    end
+})
+```
+
+- ## Set Title
+    ```luau
+    Slider:SetTitle("Title Example")
+    ```
+
+- ## Set Description
+    ```luau
+    Slider:SetDesc("Description Example")
+    ```
+    
+- ## Set Slider value
+    ```luau
+    Slider:Set(42)
+    ```
+
+- ## Lock Element
+    ```luau
+    Slider:Lock()
+    ```
+
+- ## Unlock Element
+    ```luau
+    Slider:Unlock()
+    ```
+
+- ## Destroy Element
+    ```luau
+    Slider:Destroy()
+    ```
+
+# API
+
+## Slider Options
+
+<TypeTable
+  type={{
+    Title:         { type: 'string',   required: true,  description: 'Title of the Slider.',        default: "Slider" },
+    Desc:          { type: 'string',   required: false, description: 'Description of the Slider.',  default: "nil" },
+    Value:         { type: 'table',    required: true,  description: 'Value of the Slider',         default: "{}" },
+    Step:          { type: 'number',   required: false, description: "Slider Moving step ",         default: "1" },
+    Locked:        { type: 'boolean',  required: false, description: 'Locks the Element',           default: "false" },
+    Callback:      { type: 'function', required: false, description: 'Callback of the Slider',      default: "nil" },
+  }}
+/>
+## Value Options (inside Slider)
+
+<TypeTable
+  type={{
+    Min:     { type: 'number',  required: true,  description: 'The minimum Value of the Slider', default: "0" },
+    Max:     { type: 'number',  required: true,  description: 'The maximum Value of the Slider', default: "nil" },
+    Default: { type: 'number',  required: true,  description: 'The default Value of the Slider', default: "0" },
+    
+  }}
+/>

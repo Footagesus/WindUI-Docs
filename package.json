@@ -1,0 +1,38 @@
+{
+    "name": "windui-docs",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "start": "next start",
+        "deploy": "GITHUB_PAGES=true npm run build && touch out/.nojekyll && gh-pages -d out",
+        "postinstall": "fumadocs-mdx"
+    },
+    "dependencies": {
+        "autoprefixer": "^10.4.21",
+        "fumadocs-core": "15.2.11",
+        "fumadocs-mdx": "11.6.1",
+        "fumadocs-ui": "15.2.11",
+        "html2canvas": "^1.4.1",
+        "lightningcss.android-arm64.node": "^1.29.3-alpha.2",
+        "lucide": "^0.503.0",
+        "lucide-react": "^0.503.0",
+        "next": "15.3.1",
+        "oklab": "^0.0.2-alpha.1",
+        "playwright": "^1.52.0",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "tailwindcss": "^4.1.4"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.4",
+        "@types/mdx": "^2.0.13",
+        "@types/node": "22.15.2",
+        "@types/react": "^19.1.2",
+        "@types/react-dom": "^19.1.2",
+        "gh-pages": "^6.3.0",
+        "postcss": "^8.5.3",
+        "typescript": "^5.8.3"
+    }
+}

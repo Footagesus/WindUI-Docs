@@ -1,0 +1,94 @@
+---
+title: Dropdown
+description: Creating Dropdown and Editing it
+icon: ChevronsUpDown
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Dropdown 
+
+### Multi Dropdown
+
+```luau
+local Dropdown = Tab:Dropdown({
+    Title = "Dropdown (Multi)",
+    Values = { "Category A", "Category B", "Category C" },
+    Value = { "Category A" },
+    Multi = true,
+    AllowNone = true,
+    Callback = function(option) 
+        print("Categories selected: " .. game:GetService("HttpService"):JSONEncode(option)) 
+    end
+})
+```
+
+### No multi Dropdown
+
+```luau
+local Dropdown = Tab:Dropdown({
+    Title = "Dropdown (Multi)",
+    Values = { "Category A", "Category B", "Category C" },
+    Value = "Category A",
+    Callback = function(option) 
+        print("Category selected: " .. option) 
+    end
+})
+```
+
+- ## Set Title
+    ```luau
+    Dropdown:SetTitle("Title Example")
+    ```
+
+- ## Set Description
+    ```luau
+    Dropdown:SetDesc("Description Example")
+    ```
+    
+- ## Select value
+    - For default Dropdown
+        ```luau
+        Dropdown:Select("Category B")
+        ```
+    - For Multi Dropdown
+        ```luau
+        Dropdown:Select({"Category B"})
+        ```
+
+- ## Refresh Values (Update)
+    ```luau
+    Dropdown:Refresh({ "New Category A", "New Category B" })
+    ```
+    
+- ## Lock Element
+    ```luau
+    Dropdown:Lock()
+    ```
+
+- ## Unlock Element
+    ```luau
+    Dropdown:Unlock()
+    ```
+
+- ## Destroy Element
+    ```luau
+    Dropdown:Destroy()
+    ```
+
+# API
+
+## Dropdown Options
+
+<TypeTable
+  type={{
+    Title:         { type: 'string',                        required: true,  description: 'Title of the Dropdown.',            default: "Dropdown" },
+    Desc:          { type: 'string',                        required: false, description: 'Description of the Dropdown.',      default: "nil" },
+    Value:         { type: 'string or table (for multi)',   required: true,  description: 'Value of the Dropdown',             default: "nil" },
+    Values:        { type: 'table',                         required: true,  description: "Values to select in the Dropdown",  default: "{}" },
+    AllowNone:     { type: 'boolean',                       required: false, description: 'Allow None selected',               default: "false" },
+    Multi:         { type: 'boolean',                       required: false, description: 'Select multiple values',            default: "false" },
+    Locked:        { type: 'boolean',                       required: false, description: 'Locks the Element',                 default: "false" },
+    Callback:      { type: 'function',                      required: false, description: 'Callback of the Dropdown',          default: "nil" },
+  }}
+/>

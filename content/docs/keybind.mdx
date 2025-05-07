@@ -1,0 +1,59 @@
+---
+title: Keybind
+description: Creating Keybind and Editing it
+icon: Command
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Keybind 
+
+```luau
+local Keybind = Tab:Keybind({
+    Title = "Keybind",
+    Desc = "Keybind to open ui",
+    Value = "G",
+    Callback = function(v)
+        Window:SetToggleKey(Enum.KeyCode[v])
+    end
+})
+```
+
+- ## Set Title
+    ```luau
+    Keybind:SetTitle("Title Example")
+    ```
+
+- ## Set Description
+    ```luau
+    Keybind:SetDesc("Description Example")
+    ```
+
+- ## Lock Element
+    ```luau
+    Keybind:Lock()
+    ```
+
+- ## Unlock Element
+    ```luau
+    Keybind:Unlock()
+    ```
+
+- ## Destroy Element
+    ```luau
+    Keybind:Destroy()
+    ```
+
+# API
+
+## Keybind Options
+
+<TypeTable
+  type={{
+    Title:         { type: 'string',   required: true,  description: 'Title of the Keybind.',                             default: "Keybind" },
+    Desc:          { type: 'string',   required: false, description: 'Description of the Keybind.',                       default: "nil" },
+    Value:         { type: 'string',   required: true, description:  'Default value of the Keybind',                      default: "F" },
+    Locked:        { type: 'boolean',  required: false, description: 'Locks the Element',                                 default: "false" },
+    Callback:      { type: 'function', required: false, description: 'Callback of the Keybind',                           default: "nil" },
+  }}
+/>

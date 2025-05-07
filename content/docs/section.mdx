@@ -1,0 +1,39 @@
+---
+title: Section
+description: Creating Section and Editing it
+icon: AlignCenter
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Section 
+
+```luau
+local Section = Tab:Section({ 
+    Title = "Section",
+    TextXAlignment = "Left",
+    TextSize = 17, -- Default Size
+})
+```
+
+- ## Set Title
+    ```luau
+    Section:SetTitle("New Title Example")
+    ```
+
+- ## Destroy Element
+    ```luau
+    Section:Destroy()
+    ```
+
+# API
+
+## Section Options
+
+<TypeTable
+  type={{
+    Title:          { type: 'string',   required: true,  description: 'Title of the Section.',     default: "Section" },
+    TextXAlignment: { type: 'string',   required: false, description: 'Text Horizontal Alignment', default: "nil" },
+    TextSize:       { type: 'number',   required: false,  description: "Text Size of the Section",  default: "nil" },
+  }}
+/>

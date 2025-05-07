@@ -1,0 +1,54 @@
+---
+title: Popup
+description: Creating Popup
+icon: Captions
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## Creating Popup
+
+```luau
+WindUI:Popup({
+    Title = "Popup Title",
+    Icon = "info",
+    Content = "Popup content",
+    Buttons = {
+        {
+            Title = "Cancel",
+            Callback = function() end,
+            Variant = "Tertiary",
+        },
+        {
+            Title = "Continue",
+            Icon = "arrow-right",
+            Callback = function() end,
+            Variant = "Primary",
+        }
+    }
+})
+```
+
+# API
+
+## Popup Options
+
+<TypeTable
+  type={{
+    Title:   { type: 'string',  required: true,  default: 'Popup',   description: 'Title of the Popup.' },
+    Icon:    { type: 'string',  required: false, default: 'nil',     description: 'Lucide or rbxassetid or URL icon for the Popup.' },
+    Content: { type: 'string',  required: true,  default: 'Content', description: 'Content for information or warnings.' },
+    Buttons: { type: 'table',   required: true,  default: '{}',      description: 'List of button objects for the Popup.' },
+  }}
+/>
+
+## Button Options (inside Popup)
+
+<TypeTable
+  type={{
+    Title:    { type: 'string',   required: true,  default: 'Button', description: 'Title of the Button.' },
+    Icon:     { type: 'string',   required: false, default: 'nil', description: 'Lucide icon for the Button.' },
+    Variant:  { type: 'string',   required: true,  default: 'Primary', description: 'Style variant: Primary, Secondary, or Tertiary.' },
+    Callback: { type: 'function', required: false, default: 'nil', description: 'Function to execute when the button is clicked.' },
+  }}
+/>

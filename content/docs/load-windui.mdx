@@ -1,0 +1,68 @@
+---
+title: Load WindUI
+description: Load WindUI with loadstring
+icon: ArrowRightToLine
+---
+
+# Load latest version <span className="px-2 py-1 dark:bg-zinc-500 dark:text-zinc-100 bg-zinc-300 text-zinc-800 rounded-full text-sm font-semibold">Recommended</span>
+```lua
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+```
+
+# Load selected version
+```lua
+local Version = "1.6.0"
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/download/" .. Version .. "/main.lua"))()
+```
+
+- ## Set Notification Lower
+    ```luau
+    WindUI:SetNotificationLower(true)
+    ```
+
+- ## Set Font
+    ```luau
+    WindUI:SetFont("rbxassetid://font-id-here")
+    ```
+
+- ## Set Theme
+    ```luau
+    WindUI:SetTheme("Dark")
+    ```
+
+- ## Add Theme
+    ```luau
+    WindUI:AddTheme({
+        Name = "Dark",
+        Accent = "#18181b",
+        Outline = "#FFFFFF",
+        Text = "#FFFFFF",
+        Placeholder = "#999999",
+        Background = "#0e0e10",
+        Button = "#52525b",
+        Icon = "#a1a1aa",
+    })
+    ```
+
+# Other
+
+- ## Get Themes
+    ```luau
+    WindUI:GetThemes()
+    ```
+    
+- ## Get Current Theme
+    ```luau
+    WindUI:GetCurrentTheme()
+    ```
+    
+- ## Get Window Transparency (true or false)
+    ```luau
+    WindUI:GetTransparency()
+    ```
+    
+- ## Get Window Size (UDim2)
+    ```luau
+    WindUI:GetWindowSize()
+    ```
+    
