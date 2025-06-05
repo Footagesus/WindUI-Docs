@@ -28,20 +28,22 @@ local Paragraph = Tab:Paragraph({
 })
 ```
 
-- ## Set Title
+### Set Title
     ```luau
     Paragraph:SetTitle("Title Example")
     ```
 
-- ## Set Description
+### Set Description
     ```luau
     Paragraph:SetDesc("DescriptionExample")
     ```
     
-- ## Destroy Element
+### Destroy Element
     ```luau
     Paragraph:Destroy()
     ```
+
+<hr/>
 
 # API
 
@@ -53,6 +55,7 @@ local Paragraph = Tab:Paragraph({
     Desc:          { type: 'string',  required: false, description: 'Description of the paragraph.',                        default: "nil" },
     Image:         { type: 'string',  required: false, description: 'Lucide, rbxassetid, or URL icon for the paragraph.',   default: "nil" },
     ImageSize:     { type: 'number',  required: false, description: 'Image Size.',                                          default: "22" },
+    IconThemed:    { type: 'boolean', required: false, description: 'Makes custom icon (image) themed',                             default: "false" },
     Thumbnail:     { type: 'string',  required: false, description: 'Thumbnail of the paragraph.',                          default: "nil" },
     ThumbnailSize: { type: 'number',  required: false, description: 'Thumbnail height size.',                               default: "80" },
     Locked:        { type: 'boolean', required: false, description: 'Locks the Element',                                    default: "false" },

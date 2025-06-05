@@ -29,16 +29,20 @@ WindUI:Popup({
 })
 ```
 
+
+<hr/>
+
 # API
 
 ## Popup Options
 
 <TypeTable
   type={{
-    Title:   { type: 'string',  required: true,  default: 'Popup',   description: 'Title of the Popup.' },
-    Icon:    { type: 'string',  required: false, default: 'nil',     description: 'Lucide or rbxassetid or URL icon for the Popup.' },
-    Content: { type: 'string',  required: true,  default: 'Content', description: 'Content for information or warnings.' },
-    Buttons: { type: 'table',   required: true,  default: '{}',      description: 'List of button objects for the Popup.' },
+    Title:      { type: 'string',  required: true,  default: 'Popup',   description: 'Title of the Popup.' },
+    Icon:       { type: 'string',  required: false, default: 'nil',     description: 'Lucide or rbxassetid or URL icon for the Popup.' },
+    IconThemed: { type: 'boolean', required: false, default: "false",   description: 'Makes custom icon themed' },
+    Content:    { type: 'string',  required: true,  default: 'Content', description: 'Content for information or warnings.' },
+    Buttons:    { type: 'table',   required: true,  default: '{}',      description: 'List of button objects for the Popup.' },
   }}
 />
 

@@ -11,7 +11,12 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
 ```luau
 local Slider = Tab:Slider({
     Title = "Slider",
+    
+    -- To make float number supported, 
+    -- make the Step a float number.
+    -- example: Step = 0.1
     Step = 1,
+    
     Value = {
         Min = 20,
         Max = 120,
@@ -23,35 +28,37 @@ local Slider = Tab:Slider({
 })
 ```
 
-- ## Set Title
+### Set Title
     ```luau
     Slider:SetTitle("Title Example")
     ```
 
-- ## Set Description
+### Set Description
     ```luau
     Slider:SetDesc("Description Example")
     ```
     
-- ## Set Slider value
+### Set Slider value
     ```luau
     Slider:Set(42)
     ```
 
-- ## Lock Element
+### Lock Element
     ```luau
     Slider:Lock()
     ```
 
-- ## Unlock Element
+### Unlock Element
     ```luau
     Slider:Unlock()
     ```
 
-- ## Destroy Element
+### Destroy Element
     ```luau
     Slider:Destroy()
     ```
+
+<hr/>
 
 # API
 

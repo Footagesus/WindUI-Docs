@@ -11,7 +11,23 @@ export default function HomePage() {
                 </div>
 
                 <div className="z-20 text-left max-w-3xl px-6 my-10 flex flex-col justify-start ">
-                    <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                    <svg width="1024" height="1024" className="size-12 dark:fill-white fill-black" viewBox="0 0 1024 1024" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <g clipPath="url(#clip0_6_3)">
+                            <rect width="256" height="256" transform="translate(256 256)" fill="currentColor"/>
+                            <rect width="256" height="256" transform="translate(512 768)" fill="currentColor"/>
+                            <rect width="256" height="256" transform="translate(512)" fill="currentColor"/>
+                            <rect width="256" height="256" transform="translate(0 768)" fill="currentColor"/>
+                            <rect width="256" height="256" transform="translate(256 768)" fill="currentColor"/>
+                            <rect width="256" height="256" transform="translate(768 256)" fill="currentColor"/>
+                            <rect width="256" height="256" transform="translate(768 512)" fill="currentColor"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_6_3">
+                                <rect width="1024" height="1024" fill="currentColor"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <h1 className="my-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                         Create beautiful UI with <span className="font-bold bg-gradient-to-r from-[#00FF87] to-[#60EFFF] bg-clip-text text-transparent brightness-90 dark:brightness-100 inline-block">WindUI</span>
                     </h1>
                     <p className="mb-8 text-xl opacity-60 max-w-2xl mx-auto">
@@ -44,49 +60,49 @@ export default function HomePage() {
                 </div>
 
                 <div className="w-full px-6 relative bottom-0 w-full max-w-3xl translate-y-1/4">
-                    <div className=" p-5 dark:bg-white/3 bg-black/10 rounded-[20px]">
+                    <div className="">
                         <img
-                            className="w-full object-cover opacity-90 drop-shadow-2xl drop-shadow-black/50"
+                            className="w-full object-cover  drop-shadow-2xl drop-shadow-white/15"
                             src="https://raw.githubusercontent.com/Footagesus/WindUI/main/docs/ui.png"
-                            alt="WindUI Components Preview"
+                            alt="WindUI Preview"
                         />
                     </div>
                 </div>
             </div>
 
-            <div className="dark:bg-white/3 bg-black/10 py-16 px-6 relative text-white">
+            <div className="dark:bg-white/3 bg-black/10 py-16 px-6 relative dark:text-white text-black">
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="p-5 rounded-2xl bg-white/3 hover:shadow-md transition-all flex flex-col gap-3 border-2 border-transparent relative shadow-lg shadow-emerald-600/20">
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 -z-10"></div>
-                        <div className="absolute inset-[2px] rounded-[14px] bg-neutral-950/95 -z-10"></div>
+                        <div className="absolute inset-[-2px] rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 -z-10"></div>
+                        <div className="absolute inset-0 rounded-[14px] dark:bg-black bg-white -z-10"></div>
 
                         <div className="">
                             <SlidersVertical />
                         </div>
-                        <h3 className="text-lg font-semibold">Customizable</h3>
-                        <p className="opacity-40">Easily customize components to match your brand and design system.</p>
+                        <h3 className="text-xl font-semibold">Customizable</h3>
+                        <p className="opacity-30">Easily customize components to match your brand and design system.</p>
                     </div>
 
                     <div className="p-5 rounded-2xl bg-white/3 hover:shadow-md transition-all flex flex-col gap-3 border-2 border-transparent relative shadow-lg shadow-purple-600/20">
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500 -z-10"></div>
-                        <div className="absolute inset-[2px] rounded-[14px] bg-neutral-950/95 -z-10"></div>
+                        <div className="absolute inset-[-2px] rounded-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500 -z-10"></div>
+                        <div className="absolute inset-0 rounded-[14px] dark:bg-black bg-white -z-10"></div>
 
                         <div className="">
                             <CodeXml />
                         </div>
-                        <h3 className="text-lg font-semibold">Developer Friendly</h3>
-                        <p className="opacity-40">Built with modern web standards and developer experience in mind.</p>
+                        <h3 className="text-xl font-semibold">Developer Friendly</h3>
+                        <p className="opacity-30">Built with modern web standards and developer experience in mind.</p>
                     </div>
 
                     <div className="p-5 rounded-2xl bg-white/3 hover:shadow-md transition-all flex flex-col gap-3 border-2 border-transparent relative shadow-lg shadow-orange-600/20">
-                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-amber-400 to-rose-500 -z-10"></div>
-                        <div className="absolute inset-[2px] rounded-[14px] bg-neutral-950/95 -z-10"></div>
+                        <div className="absolute inset-[-2px] rounded-2xl bg-gradient-to-r from-amber-400 to-rose-500 -z-10"></div>
+                        <div className="absolute inset-0 rounded-[14px] dark:bg-black bg-white -z-10"></div>
 
                         <div className="">
                             <Heart />
                         </div>
-                        <h3 className="text-lg font-semibold">Open Source</h3>
-                        <p className="opacity-40">Free to use in personal and commercial projects with active community support.</p>
+                        <h3 className="text-xl font-semibold">Open Source</h3>
+                        <p className="opacity-30">Free to use in personal and commercial projects with active community support.</p>
                     </div>
                 </div>
             </div>

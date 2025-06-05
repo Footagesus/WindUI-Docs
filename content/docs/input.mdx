@@ -14,6 +14,7 @@ local Input = Tab:Input({
     Desc = "Input Description",
     Value = "Default value",
     InputIcon = "bird",
+    Type = "Input", -- or "Textarea"
     Placeholder = "Enter text...",
     Callback = function(input) 
         print("text entered: " .. input)
@@ -21,35 +22,37 @@ local Input = Tab:Input({
 })
 ```
 
-- ## Set Title
+### Set Title
     ```luau
     Input:SetTitle("Title Example")
     ```
 
-- ## Set Description
+### Set Description
     ```luau
     Input:SetDesc("Description Example")
     ```
     
-- ## Set Input value
+### Set Input value
     ```luau
     Input:Set("New value")
     ```
 
-- ## Lock Element
+### Lock Element
     ```luau
     Input:Lock()
     ```
 
-- ## Unlock Element
+### Unlock Element
     ```luau
     Input:Unlock()
     ```
 
-- ## Destroy Element
+### Destroy Element
     ```luau
     Input:Destroy()
     ```
+    
+<hr/>
 
 # API
 
@@ -61,6 +64,7 @@ local Input = Tab:Input({
     Desc:          { type: 'string',   required: false, description: 'Description of the Input.',                       default: "nil" },
     Value:         { type: 'string',   required: false, description: 'Default value of the Input',                      default: "nil" },
     Placeholder:   { type: 'string',   required: true,  description: "Placeholder Text of the Input",                   default: "nil" },
+    Type:          { type: 'string',   required: false, description: "Type of input (`Textarea` or `Input`)",           default: "Input" },
     InputIcon:     { type: 'string',   required: false, description: "Lucide, rbxassetid, or URL icon for the Input",   default: "nil" },
     Locked:        { type: 'boolean',  required: false, description: 'Locks the Element',                               default: "false" },
     Callback:      { type: 'function', required: false, description: 'Callback of the Input',                           default: "nil" },

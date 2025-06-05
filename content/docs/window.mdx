@@ -18,7 +18,10 @@ local Window = WindUI:CreateWindow({
     Transparent = true,
     Theme = "Dark",
     SideBarWidth = 200,
-    Background = "",
+    Background = "", -- rbxassetid only
+    BackgroundImageTransparency = 0.42,
+    HideSearchBar = true,
+    ScrollBarEnabled = false,
     User = {
         Enabled = true,
         Anonymous = true,
@@ -26,7 +29,7 @@ local Window = WindUI:CreateWindow({
             print("clicked")
         end,
     },
-    KeySystem = {
+    KeySystem = { -- <- ↓ remove this all, if you dont neet the key system
         Key = { "1234", "5678" },
         Note = "Example Key System.",
         Thumbnail = {
@@ -39,20 +42,61 @@ local Window = WindUI:CreateWindow({
 })
 ```
 
-- ## Set Background Image
+### Set Background Image
     ```luau
     Window:SetBackgroundImage("rbxassetid://id-here")
     ```
     
-- ## Set Toggle Key
+### Set Background Image Transparency
+    ```luau
+    Window:SetBackgroundImageTransparency(value: number) -- from 0  to 1
+    ```
+    
+### Set Toggle Key
     ```luau
     Window:SetToggleKey(Enum.KeyCode.H)
     ```
     
-- ## Set Transparency
+### Set Transparency
     ```luau
     Window:ToggleTransparency(true)
     ```
+    
+## Edit `OpenButton` 
+```luau
+Window:EditOpenButton({
+    Title = "Open Example UI",
+    Icon = "monitor",
+    CornerRadius = UDim.new(0,16),
+    StrokeThickness = 2,
+    Color = ColorSequence.new( -- gradient
+        Color3.fromHex("FF0F7B"), 
+        Color3.fromHex("F89B29")
+    ),
+    OnlyMobile = false,
+    Enabled = true,
+    Draggable = true,
+})
+```
+    
+## Edit Topbar Buttons
+
+### Disable Topbar Buttons
+```luau
+Window:DisableTopbarButtons({
+    "Close", 
+    "Minimize", 
+    "Fullscreen",
+})
+```
+
+### Create Custom Topbar Buttons
+```luau
+--                        | Special name     | Icon     | Callback                         | Order
+Window:CreateTopbarButton("MyCustomButton1", "bird",    function() print("clicked!") end,  990)
+```
+
+<hr/>
 
 # API
 
@@ -60,17 +104,21 @@ local Window = WindUI:CreateWindow({
 
 <TypeTable
   type={{
-    Title:       { type: 'string',  required: true,  description: 'Title of the window.',                                 default: "UI Library" },
-    Icon:        { type: 'string',  required: false, description: 'Lucide, rbxassetid, or URL icon for the window.',      default: "nil" },
-    Author:      { type: 'string',  required: false, description: 'Name of the UI author.',                               default: "nil" },
-    Folder:      { type: 'string',  required: true,  description: 'Folder name for saving data (like keys, URL images).', default: "nil" },
-    Size:        { type: 'UDim2',   required: false, description: 'Custom size for the window.',                          default: "UDim2.new(0,580,0,460)" },
-    Transparent: { type: 'boolean', required: false, description: 'Whether the window background is transparent.',        default: "false" },
-    Theme:       { type: 'string',  required: false, description: 'Theme style (e.g., Dark, Light).',                     default: "Dark" },
-    SideBarWidth:{ type: 'number',  required: false, description: 'Width of the sidebar.',                                default: 200 },
-    Background:  { type: 'string',  required: false, description: 'Background image ID.',                                 default: "nil" },
-    User:        { type: 'table',   required: false, description: 'Settings related to the user system.',                 default: "{}" },
-    KeySystem:   { type: 'table',   required: false, description: 'Settings for key authentication system.',              default: "{}" },
+    Title:                        { type: 'string',  required: true,  description: 'Title of the window.',                                 default: "UI Library" },
+    Icon:                         { type: 'string',  required: false, description: 'Lucide, rbxassetid, or URL icon for the window.',      default: "nil" },
+    IconThemed:                   { type: 'boolean', required: false, description: 'Makes custom icon themed',                             default: "false" },
+    Author:                       { type: 'string',  required: false, description: 'Name of the UI author.',                               default: "nil" },
+    Folder:                       { type: 'string',  required: true,  description: 'Folder name for saving data (like keys, URL images).', default: "nil" },
+    Size:                         { type: 'UDim2',   required: false, description: 'Custom size for the window.',                          default: "UDim2.new(0,580,0,460)" },
+    Transparent:                  { type: 'boolean', required: false, description: 'Whether the window background is transparent.',        default: "false" },
+    Theme:                        { type: 'string',  required: false, description: 'Theme style (e.g., Dark, Light).',                     default: "Dark" },
+    SideBarWidth:                 { type: 'number',  required: false, description: 'Width of the sidebar.',                                default: 200 },
+    Background:                   { type: 'string',  required: false, description: 'Background image ID.',                                 default: "nil" },
+    BackgroundImageTransparency:  { type: 'number',  required: false, description: 'Changes Background Image Transparency',                default: "0" },
+    HideSearchBar:                { type: 'boolean', required: false, description: 'Hides Searchbar',                                      default: "false" },
+    ScrollBarEnabled:             { type: 'boolean', required: false, description: 'Enable ScrollBar',                                     default: "false" },
+    User:                         { type: 'table',   required: false, description: 'Settings related to the user system.',                 default: "{}" },
+    KeySystem:                    { type: 'table',   required: false, description: 'Settings for key authentication system.',              default: "{}" },
   }}
 />
 

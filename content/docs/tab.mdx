@@ -16,10 +16,12 @@ local Tab = Window:Tab({
 })
 ```
 
-- ## Select Tab
-    ```luau
-    Window:SelectTab(2) -- Number of Tab
-    ```
+### Select Tab
+```luau
+Window:SelectTab(2) -- Number of Tab
+```
+
+<hr/>
 
 # API
 
@@ -27,8 +29,9 @@ local Tab = Window:Tab({
 
 <TypeTable
   type={{
-    Title:   { type: 'string',  required: true,  default: "Tab",       description: 'Title of the Tab.' },
-    Icon:    { type: 'string',  required: false, default: "nil",       description: 'Lucide or rbxassetid icon for the Tab.' },
-    Locked:  { type: 'boolean', required: false, default: "false",     description: 'Locking the Tab.' },
+    Title:      { type: 'string',  required: true,  default: "Tab",       description: 'Title of the Tab.' },
+    Icon:       { type: 'string',  required: false, default: "nil",       description: 'Lucide or rbxassetid icon or URL for the Tab.' },
+    IconThemed: { type: 'boolean', required: false, default: "false",     description: 'Makes custom icon themed' }, 
+    Locked:     { type: 'boolean', required: false, default: "false",     description: 'Locking the Tab.' },
   }}
 />
