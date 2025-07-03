@@ -17,6 +17,7 @@ local Window = WindUI:CreateWindow({
     Size = UDim2.fromOffset(580, 460),
     Transparent = true,
     Theme = "Dark",
+    Resizable = true,
     SideBarWidth = 200,
     Background = "", -- rbxassetid only
     BackgroundImageTransparency = 0.42,
@@ -60,6 +61,11 @@ local Window = WindUI:CreateWindow({
 ### Set Transparency
     ```luau
     Window:ToggleTransparency(true)
+    ```
+    
+### Set Resizable
+    ```luau
+    Window:IsResizable(false)
     ```
     
 ## Edit `OpenButton` 
@@ -112,6 +118,7 @@ Window:CreateTopbarButton("MyCustomButton1", "bird",    function() print("clicke
     Size:                         { type: 'UDim2',   required: false, description: 'Custom size for the window.',                          default: "UDim2.new(0,580,0,460)" },
     Transparent:                  { type: 'boolean', required: false, description: 'Whether the window background is transparent.',        default: "false" },
     Theme:                        { type: 'string',  required: false, description: 'Theme style (e.g., Dark, Light).',                     default: "Dark" },
+    Resizable:                    { type: 'boolean', required: false, description: 'Can or cannot resize ui',                              default: "true" },
     SideBarWidth:                 { type: 'number',  required: false, description: 'Width of the sidebar.',                                default: 200 },
     Background:                   { type: 'string',  required: false, description: 'Background image ID.',                                 default: "nil" },
     BackgroundImageTransparency:  { type: 'number',  required: false, description: 'Changes Background Image Transparency',                default: "0" },

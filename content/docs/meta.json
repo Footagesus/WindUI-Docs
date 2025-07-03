@@ -10,6 +10,7 @@
     "load-windui",
     "---UI---",
     "window",
+    "tabsection",
     "tab",
     "dialog",
     "popup",

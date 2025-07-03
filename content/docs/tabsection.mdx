@@ -1,0 +1,52 @@
+---
+title: Tab Section
+description: Creating Section for the Tabs and Editing it
+icon: TextSelect
+---
+
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+
+## Creating Section for the Tabs
+
+```luau
+local Section = Window:Section({
+    Title = "Section for the tabs",
+    Icon = "bird",
+    Opened = true,
+})
+```
+
+<Accordion type="single" collapsible>
+    <AccordionItem value="item-1">
+        <AccordionTrigger>How can I make it open/close?</AccordionTrigger>
+        <AccordionContent>
+            You need to create a tab inside the section:
+            ```luau 
+            Section:Tab(...)
+            ```
+        </AccordionContent>
+    </AccordionItem>
+</Accordion>
+
+<hr/>
+
+# API
+
+## Section Options
+
+<TypeTable
+  type={{
+    Title:          { type: 'string',   required: true,  description: 'Title of the Section.',     default: "Section" },
+    Icon:           { type: 'string',   required: false, default: "nil",                           description: 'Lucide or rbxassetid icon or URL for the Tab.' },
+    IconThemed:     { type: 'boolean',  required: false, default: "false",                         description: 'Makes custom icon themed' }, 
+    Opened:         { type: 'boolean',  required: false, default: "false",                         description: 'Opened section' }, 
+  }}
+/>

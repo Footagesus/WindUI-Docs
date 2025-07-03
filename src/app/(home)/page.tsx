@@ -1,6 +1,34 @@
 import Link from 'next/link';
 import { ArrowRight, SlidersVertical, CodeXml, Heart, Github } from 'lucide-react';
 
+import {
+    Card,
+    CardAction,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
+
+const features = [
+    {
+        Icon: SlidersVertical,
+        Title: "Customizable",
+        Content: "Easily customize components to match your brand and design system."
+    },
+    {
+        Icon: CodeXml,
+        Title: "Developer Friendly",
+        Content: "Built with modern ui standards and developer experience in mind."
+    },
+    {
+        Icon: Heart,
+        Title: "Open Source",
+        Content: "Free to use in personal and commercial projects with active community support."
+    },
+]
+
 export default function HomePage() {
     return (
         <main className="flex flex-1 flex-col text-left relative w-full overflow-x-hidden p-0 m-0 top-0 min-h-full">
@@ -30,7 +58,7 @@ export default function HomePage() {
                     <h1 className="my-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                         Create beautiful UI with <span className="font-bold bg-gradient-to-r from-[#00FF87] to-[#60EFFF] bg-clip-text text-transparent brightness-90 dark:brightness-100 inline-block">WindUI</span>
                     </h1>
-                    <p className="mb-8 text-xl opacity-60 max-w-2xl mx-auto">
+                    <p className="mb-8 text-xl opacity-60">
                         {`A modern, lightweight UI Library
                           Simple design, and Open Source code.`}
                     </p>
@@ -71,39 +99,17 @@ export default function HomePage() {
             </div>
 
             <div className="dark:bg-white/3 bg-black/10 py-16 px-6 relative dark:text-white text-black">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="p-5 rounded-2xl bg-white/3 hover:shadow-md transition-all flex flex-col gap-3 border-2 border-transparent relative shadow-lg shadow-emerald-600/20">
-                        <div className="absolute inset-[-2px] rounded-2xl bg-gradient-to-r from-emerald-400 to-cyan-400 -z-10"></div>
-                        <div className="absolute inset-0 rounded-[14px] dark:bg-black bg-white -z-10"></div>
-
-                        <div className="">
-                            <SlidersVertical />
-                        </div>
-                        <h3 className="text-xl font-semibold">Customizable</h3>
-                        <p className="opacity-30">Easily customize components to match your brand and design system.</p>
-                    </div>
-
-                    <div className="p-5 rounded-2xl bg-white/3 hover:shadow-md transition-all flex flex-col gap-3 border-2 border-transparent relative shadow-lg shadow-purple-600/20">
-                        <div className="absolute inset-[-2px] rounded-2xl bg-gradient-to-r from-violet-500 to-fuchsia-500 -z-10"></div>
-                        <div className="absolute inset-0 rounded-[14px] dark:bg-black bg-white -z-10"></div>
-
-                        <div className="">
-                            <CodeXml />
-                        </div>
-                        <h3 className="text-xl font-semibold">Developer Friendly</h3>
-                        <p className="opacity-30">Built with modern web standards and developer experience in mind.</p>
-                    </div>
-
-                    <div className="p-5 rounded-2xl bg-white/3 hover:shadow-md transition-all flex flex-col gap-3 border-2 border-transparent relative shadow-lg shadow-orange-600/20">
-                        <div className="absolute inset-[-2px] rounded-2xl bg-gradient-to-r from-amber-400 to-rose-500 -z-10"></div>
-                        <div className="absolute inset-0 rounded-[14px] dark:bg-black bg-white -z-10"></div>
-
-                        <div className="">
-                            <Heart />
-                        </div>
-                        <h3 className="text-xl font-semibold">Open Source</h3>
-                        <p className="opacity-30">Free to use in personal and commercial projects with active community support.</p>
-                    </div>
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
+                {features.map((item, index) => (
+                    <Card key={index}>
+                        <CardHeader>
+                            <item.Icon/>
+                            <CardTitle>{item.Title}</CardTitle>
+                            <CardDescription>{item.Content}</CardDescription>
+                        </CardHeader>
+                    </Card>
+                    
+                ))}
                 </div>
             </div>
         </main>
