@@ -13,6 +13,7 @@ import { TypeTable } from 'fumadocs-ui/components/type-table';
 ```luau tab="Multi Dropdown"
 local Dropdown = Tab:Dropdown({
     Title = "Dropdown (Multi)",
+    Desc = "Dropdown Description",
     Values = { "Category A", "Category B", "Category C" },
     Value = { "Category A" },
     Multi = true,
@@ -27,6 +28,7 @@ local Dropdown = Tab:Dropdown({
 ```luau tab="No Multi Dropdown"
 local Dropdown = Tab:Dropdown({
     Title = "Dropdown",
+    Desc = "Dropdown Description",
     Values = { "Category A", "Category B", "Category C" },
     Value = "Category A",
     Callback = function(option) 
@@ -38,6 +40,7 @@ local Dropdown = Tab:Dropdown({
 ```luau tab="Advanced Dropdown"
 local Dropdown = Tab:Dropdown({
     Title = "Advanced Dropdown",
+    Desc = "Dropdown Description",
     Values = {
         {
             Title = "Category A",
