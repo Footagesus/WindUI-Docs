@@ -143,3 +143,40 @@
 #nd-subnav button svg, #nd-nav button svg  {
     opacity: .5;
 }
+
+
+.superborder {
+    position: relative;
+    border-radius: inherit;
+    overflow: hidden;
+}
+.superborder::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 0.8px;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.15), rgba(255,255,255,0.04), rgba(255,255,255,0.15));
+    -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+header nav {
+    height: 60px;
+    padding: 0 20px 0 20px;
+}
+
+
+.fd-scroll-container {
+    padding: 20px;
+}
+
+#nd-nav:has(.fd-scroll-container) {
+  @apply dark:bg-neutral-900 bg-neutral-100 shadow-none;
+  border-radius: 0;
+}

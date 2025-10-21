@@ -1,16 +1,19 @@
 ---
 title: Installation
-description: Install WindUI and Edit it
+description: Install WindUI source and Edit it
 icon: Download
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
+
+A Tutorial on how to install WindUI Source on your device and edit it. 
+
 <Steps>
 
 <Step>
 ### Clone Repository
-First, clone the [WindUI](https://github.com/Footagesus/WindUI/) repository from GitHub to your local machine.
+Clone the [WindUI](https://github.com/Footagesus/WindUI/) repository from GitHub to your local machine.
 ```bash
 git clone https://github.com/Footagesus/WindUI.git
 ```
@@ -18,17 +21,22 @@ This command will create a copy of the WindUI project in your working directory,
 </Step>
 
 <Step>
-### Install Required Tools
-Make sure you have:
-- Node Package Manager (npm)
-- Lua
-- [darklua](https://darklua.com/)
+### Install Dependencies
+Navigate to the cloned directory and install npm packages:
+You need [aftman](https://github.com/LPGhatguy/aftman) to install darklua
+```bash
+cd WindUI
+
+npm install
+aftman install
+```
+
 
 </Step>
 
 <Step>
-### Bundle WindUI
-Once everything is set up, you can bundle WindUI:
+### Build WindUI
+Once everything is set up, you can build WindUI:
 
 - For development, run:
     ```bash
@@ -48,7 +56,7 @@ Once everything is set up, you can bundle WindUI:
     This will start a local build server at http://localhost:8642.
     It automatically build your changes and serves a ready-to-use development bundle, so you can instantly test it in Roblox without manual rebuilding.
     
-    Example usage in Roblox:
+    Usage in Roblox (exploit environment):
     ```luau
     loadstring(game:HttpGet("http://localhost:8642/dist/main.lua"))()
     ```
