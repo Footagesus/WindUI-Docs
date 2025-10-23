@@ -14,7 +14,7 @@ local Toggle = Tab:Toggle({
     Desc = "Toggle Description",
     Icon = "bird",
     Type = "Checkbox",
-    Default = false,
+    Value = false, -- default value
     Callback = function(state) 
         print("Toggle Activated" .. tostring(state))
     end
