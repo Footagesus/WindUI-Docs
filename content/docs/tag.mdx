@@ -24,7 +24,8 @@ import Banner from '@/components/banner'
 ## Creating Tag
 ```luau
 Window:Tag({
-    Title = "v1.6.4",
+    Title = "v1.6.6",
+    Icon = "github",
     Color = Color3.fromHex("#30ff6a"),
     Radius = 0, -- from 0 to 13
 })
@@ -43,6 +44,7 @@ https://create.roblox.com/docs/reference/engine/datatypes/Color3
             <TypeTable
               type={{
                 Title:  { type: 'string',  required: true,   description: 'Title of the Tag.',  default: "Tag" },
+                Icon:   { type: 'string',  required: false,  description: 'Icon of the Tag.',   default: "nil" },
                 Color:  { type: 'Color3',  required: false,  description: 'Tag Color.',         default: 'Color3.fromHex("#315dff")' },
                 Radius: { type: 'number',  required: false,  description: 'Tag Radius (0–13)',  default: '13' },
               }}

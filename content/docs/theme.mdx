@@ -9,34 +9,73 @@ icon: Paintbrush
 WindUI:AddTheme({
     Name = "My Theme", -- theme name
     
+    
+    -- More Soon!
+    
     Accent = Color3.fromHex("#18181b"),
-    Dialog = Color3.fromHex("#161616"),
+    Background = Color3.fromHex("#101010"), -- Accent
+    BackgroundTransparency = 0,
     Outline = Color3.fromHex("#FFFFFF"),
     Text = Color3.fromHex("#FFFFFF"),
     Placeholder = Color3.fromHex("#7a7a7a"),
-    Background = Color3.fromHex("#101010"),
     Button = Color3.fromHex("#52525b"),
-    Icon = Color3.fromHex("#a1a1aa")
+    Icon = Color3.fromHex("#a1a1aa"),
+    
+    Hover = Color3.fromHex("#FFFFFF"), -- Text
+    BackgroundTransparency = 0,
+    
+    WindowBackground = Color3.fromHex("101010") -- Background
+    WindowShadow = Color3.fromHex("000000"),
+    
+    DialogBackground = Color3.fromHex("#101010"), -- Background
+    DialogBackgroundTransparency = 0, -- BackgroundTransparency
+    DialogTitle = Color3.fromHex("#FFFFFF"), -- Text
+    DialogContent = Color3.fromHex("#FFFFFF"), -- Text
+    DialogIcon = Color3.fromHex("#a1a1aa"), -- Icon
+    
+    WindowTopbarButtonIcon = Color3.fromHex("a1a1aa"), -- Icon
+    WindowTopbarTitle = Color3.fromHex("FFFFFF"), -- Text
+    WindowTopbarAuthor = Color3.fromHex("FFFFFF"), -- Text
+    WindowTopbarIcon = Color3.fromHex("FFFFFF"), -- Text
+    
+    TabBackground = Color3.fromHex("#FFFFFF"), -- Text
+    TabTitle = Color3.fromHex("#FFFFFF"), -- Text
+    TabIcon = Color3.fromHex("a1a1aa"), -- Icon
+    
+    ElementBackground = Color3.fromHex("#FFFFFF"), -- Text
+    ElementTitle = Color3.fromHex("#FFFFFF"), -- Text
+    ElementDesc = Color3.fromHex("#FFFFFF"), -- Text
+    ElementIcon = Color3.fromHex("#a1a1aa"), -- Icon
+    
+    PopupBackground = Color3.fromHex("#101010"), -- Background
+    PopupBackgroundTransparency = 0, -- BackgroundTransparency
+    PopupTitle = Color3.fromHex("#FFFFFF"), -- Text
+    PopupContent = Color3.fromHex("#FFFFFF"), -- Text
+    PopupIcon = Color3.fromHex("#a1a1aa"), -- Icon
+    
 })
 ```
 ```luau tab="With Gradients"
 WindUI:AddTheme({
     Name = "My Theme", -- theme name
     
-    Accent = WindUI:Gradient({                                                  -- [!code focus]
-        ["0"] = { Color = Color3.fromHex("#1f1f23"), Transparency = 0 },        -- [!code focus]
-        ["100"]   = { Color = Color3.fromHex("#18181b"), Transparency = 0 },    -- [!code focus]
-    }, {                                                                        -- [!code focus]
-        Rotation = 0,                                                           -- [!code focus]
-    }),                                                                         -- [!code focus]
-    Dialog = Color3.fromHex("#161616"),
-    Outline = Color3.fromHex("#FFFFFF"),
-    Text = Color3.fromHex("#FFFFFF"),
-    Placeholder = Color3.fromHex("#7a7a7a"),
-    Background = Color3.fromHex("#101010"),
-    Button = Color3.fromHex("#52525b"),
-    Icon = Color3.fromHex("#a1a1aa")
+    -- example of gradient (available for all values. e.g. Button, Icon, Text...)   -- [!code focus]
+    Accent = WindUI:Gradient({                                                      -- [!code focus]
+        ["0"] = { Color = Color3.fromHex("#1f1f23"), Transparency = 0 },            -- [!code focus]
+        ["100"]   = { Color = Color3.fromHex("#18181b"), Transparency = 0 },        -- [!code focus]
+    }, {                                                                            -- [!code focus]
+        Rotation = 0,                                                               -- [!code focus]
+    }),                                                                             -- [!code focus]
+    
 })
+```
+```lua
+WindUI:Gradient({                                                      -- [!code focus]
+    ["0"] = { Color = Color3.fromHex("#1f1f23"), Transparency = 0 },            -- [!code focus]
+    ["100"]   = { Color = Color3.fromHex("#18181b"), Transparency = 0 },        -- [!code focus]
+}, {                                                                            -- [!code focus]
+    Rotation = 0,                                                               -- [!code focus]
+}), 
 ```
 
 ### Set Theme
