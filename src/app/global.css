@@ -81,6 +81,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  
+  --superborder-color-1: rgba(0,0,0,0.3);
+  --superborder-color-2: rgba(0,0,0,0.3);
+  --superborder-color-3: rgba(0,0,0,0.3);
 }
 
 .dark {
@@ -115,6 +119,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  
+  --superborder-color-1: rgba(255,255,255,0.9);
+  --superborder-color-2: rgba(255,255,255,0.12);
+  --superborder-color-3: rgba(255,255,255,0.9);
 }
 
 @layer base {
@@ -156,7 +164,8 @@
     inset: 0;
     border-radius: inherit;
     padding: 0.8px;
-    background: linear-gradient(to bottom right, rgba(255,255,255,0.17), rgba(255,255,255,0.02), rgba(255,255,255,0.17));
+    opacity: 0.22;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.12), rgba(255,255,255,0.9));
     -webkit-mask: 
     linear-gradient(#000 0 0) content-box, 
     linear-gradient(#000 0 0);
@@ -174,6 +183,31 @@ header nav, #nd-subnav {
 
 #nd-nav .fd-scroll-container {
     padding: 20px;
+}
+
+[data-state="open"][data-orientation="horizontal"] button {
+    border-radius: 9999px !important;
+    border: 0;
+    background-color: rgba(255,255,255,0.03);
+    position: relative;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+[data-state="open"][data-orientation="horizontal"] button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 0.8px;
+    opacity: 0.22;
+    background: linear-gradient(to bottom right, var(--superborder-color-1), var(--superborder-color-2), var(--superborder-color-3));
+    -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+    pointer-events: none;
 }
 
 #nd-nav:has(.fd-scroll-container) {

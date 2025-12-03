@@ -15,8 +15,8 @@ export default function HomePage() {
                       Simple design, and Open Source code.`}
                 </p>
                 <div className="flex flex-row items-center justify-start gap-2 mt-8">
-                    <Link href="/docs"> <Button className="!rounded-full h-10 superborder px-4">Documentation</Button> </Link>
-                    <Link href="https://github.com/Footagesus/WindUI"> <Button className="!rounded-full h-10 superborder dark:bg-white/5 px-4" variant="ghost">Github</Button> </Link>
+                    <Link href="/docs"> <Button className="!rounded-full h-10 superborder px-4 dark:bg-white/30 text-white before:opacity-30! dark:hover:bg-white/35!">Documentation</Button> </Link>
+                    <Link href="https://github.com/Footagesus/WindUI"> <Button className="!rounded-full h-10 superborder dark:bg-white/5 px-4 before:opacity-20! dark:hover:bg-white/10!" variant="ghost">Github</Button> </Link>
                 </div>
             </div>
             <div className="py-4 text-sm opacity-60">
