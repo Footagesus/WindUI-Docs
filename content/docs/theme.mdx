@@ -9,6 +9,19 @@ icon: Paintbrush
 WindUI:AddTheme({
     Name = "My Theme", -- theme name
     
+    Accent = Color3.fromHex("#18181b"),
+    Background = Color3.fromHex("#101010"), -- Accent
+    Outline = Color3.fromHex("#FFFFFF"),
+    Text = Color3.fromHex("#FFFFFF"),
+    Placeholder = Color3.fromHex("#7a7a7a"),
+    Button = Color3.fromHex("#52525b"),
+    Icon = Color3.fromHex("#a1a1aa"),
+})
+```
+```luau tab="Advanced"
+WindUI:AddTheme({
+    Name = "My Theme", -- theme name
+    
     
     -- More Soon!
     
@@ -24,7 +37,7 @@ WindUI:AddTheme({
     Hover = Color3.fromHex("#FFFFFF"), -- Text
     BackgroundTransparency = 0,
     
-    WindowBackground = Color3.fromHex("101010") -- Background
+    WindowBackground = Color3.fromHex("101010"), -- Background
     WindowShadow = Color3.fromHex("000000"),
     
     DialogBackground = Color3.fromHex("#101010"), -- Background
@@ -53,6 +66,21 @@ WindUI:AddTheme({
     PopupContent = Color3.fromHex("#FFFFFF"), -- Text
     PopupIcon = Color3.fromHex("#a1a1aa"), -- Icon
     
+    DialogBackground = Color3.fromHex("#101010"), -- Background
+    DialogBackgroundTransparency = 0, -- Transparency
+    DialogTitle = Color3.fromHex("#FFFFFF"), -- Text
+    DialogContent = Color3.fromHex("#FFFFFF"), -- Text
+    DialogIcon = Color3.fromHex("#a1a1aa"), -- Icon
+    
+    Toggle = Color3.fromHex("#52525b"), -- Button
+    ToggleBar = Color3.fromHex("#FFFFFF"), -- White
+    
+    Checkbox = Color3.fromHex("#52525b"), -- Button
+    CheckboxIcon = Color3.fromHex("#FFFFFF"), -- White
+    
+    Slider = Color3.fromHex("#52525b"), -- Button
+    SliderThumb = Color3.fromHex("#FFFFFF"), -- White
+    
 })
 ```
 ```luau tab="With Gradients"
@@ -69,12 +97,13 @@ WindUI:AddTheme({
     
 })
 ```
+### Gradient Example
 ```lua
-WindUI:Gradient({                                                      -- [!code focus]
-    ["0"] = { Color = Color3.fromHex("#1f1f23"), Transparency = 0 },            -- [!code focus]
-    ["100"]   = { Color = Color3.fromHex("#18181b"), Transparency = 0 },        -- [!code focus]
-}, {                                                                            -- [!code focus]
-    Rotation = 0,                                                               -- [!code focus]
+WindUI:Gradient({                                                      
+    ["0"] = { Color = Color3.fromHex("#1f1f23"), Transparency = 0 },            
+    ["100"]   = { Color = Color3.fromHex("#18181b"), Transparency = 0 },      
+}, {                                                                            
+    Rotation = 0,                                                               
 }), 
 ```
 
